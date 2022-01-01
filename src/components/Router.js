@@ -5,14 +5,14 @@ import Auth from "routes/Auth";
 import Home from "routes/Home";
 import Navigation from "components/Navigation";
 import Profile from "routes/Profile";
-const RootRouter = ({ isLoggedIn }) => {
+const RootRouter = ({ isLoggedIn, userObj }) => {
   return (
     <Router>
       {isLoggedIn && <Navigation />}
       <Routes>
         {isLoggedIn ? (
           <>
-            <Route path="" element={<Home />} />
+            <Route path="" element={<Home userObj={userObj} />} />
             <Route path="profile" element={<Profile />} />
             <Route path="*" element={<Navigate to="/" />} />
           </>
