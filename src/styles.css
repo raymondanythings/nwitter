@@ -32,6 +32,17 @@ form {
   width: 100%;
 }
 
+footer {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+}
+nav {
+  margin-bottom: 80px;
+}
+
 .nweet-input::placeholder {
   color: white;
   opacity: 0.9;
@@ -192,6 +203,7 @@ form {
   width: 50px;
   height: 50px;
   margin-top: 10px;
+  z-index: 1000;
 }
 
 .nweet__actions {
@@ -225,6 +237,9 @@ form {
   max-width: 320px;
 }
 
+.authBtns > button {
+  margin-right: 5px;
+}
 .authBtn {
   cursor: pointer;
   border-radius: 20px;
@@ -232,7 +247,7 @@ form {
   padding: 10px 0px;
   font-size: 12px;
   text-align: center;
-  width: 150px;
+  width: 140px;
   background: white;
   cursor: pointer;
 }

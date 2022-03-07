@@ -8,7 +8,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { authService } from "fBase";
 import {
-  getAuth,
   GithubAuthProvider,
   GoogleAuthProvider,
   signInWithPopup,
@@ -26,9 +25,7 @@ const Auth = () => {
       } else if (name === "github") {
         provider = new GithubAuthProvider();
       }
-      console.log(getAuth());
-      const data = await signInWithPopup(authService, provider);
-      console.log(data);
+      await signInWithPopup(authService, provider);
     } catch (err) {
       console.log(err);
     }

@@ -8,13 +8,12 @@ import Profile from "routes/Profile";
 const RootRouter = ({ isLoggedIn, userObj, refreshWindow }) => {
   return (
     <Router>
-      {isLoggedIn && <Navigation userObj={userObj} />}
+      {userObj && isLoggedIn && <Navigation userObj={userObj} />}
       <div
         style={{
           maxWidth: 890,
           width: "100%",
           margin: "0 auto",
-          marginTop: 80,
           display: "flex",
           justifyContent: "center",
         }}

@@ -18,12 +18,12 @@ function App() {
             updateProfile(user, { displayName: user.displayName }),
         });
       } else {
-        console.log(user);
         setIsLoggedIn(false);
       }
       setInit(true);
     });
   }, []);
+
   const refreshWindow = () => {
     const user = authService.currentUser;
     setUserObj({
@@ -44,7 +44,7 @@ function App() {
       ) : (
         "Initializing..."
       )}
-      {/* <footer>&copy; {new Date().getFullYear()} Nwitter</footer> */}
+      <footer>&copy; {new Date().getFullYear()} Nwitter</footer>
     </>
   );
 }
