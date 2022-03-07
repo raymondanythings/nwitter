@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import RootRouter from "components/Router";
 import { authService } from "fBase";
 import { onAuthStateChanged, updateProfile } from "firebase/auth";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -42,7 +43,17 @@ function App() {
           refreshWindow={refreshWindow}
         />
       ) : (
-        "Initializing..."
+        <div
+          style={{
+            width: "100vw",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+          }}
+        >
+          <ClipLoader color="#04AAFF" size={50} />
+        </div>
       )}
       <footer>&copy; {new Date().getFullYear()} Nwitter</footer>
     </>
