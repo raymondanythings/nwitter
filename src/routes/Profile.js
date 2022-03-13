@@ -1,12 +1,15 @@
 import { authService } from "fBase";
 import { signOut, updateProfile } from "firebase/auth";
+import useTitle from "Hooks/useTitle";
 import React, { useState } from "react";
 
 const Profile = ({ userObj, refreshWindow }) => {
+  const setTitle = useTitle("Profile");
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
 
   const onLogOutClick = () => {
     signOut(authService);
+    setTitle("Login");
   };
 
   const onChange = (e) => {

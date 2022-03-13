@@ -2,10 +2,12 @@ import Nweet from "components/Nweet";
 import NweetFactory from "components/NweetFactory";
 import { dbService } from "fBase";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import useTitle from "Hooks/useTitle";
 import React, { useEffect, useState } from "react";
 
 const Home = ({ userObj }) => {
   const [nweets, setNweets] = useState([]);
+  const _ = useTitle("Home");
   useEffect(() => {
     const q = query(
       collection(dbService, "nweets"),

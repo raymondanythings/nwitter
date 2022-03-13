@@ -3,11 +3,13 @@ import RootRouter from "components/Router";
 import { authService } from "fBase";
 import { onAuthStateChanged, updateProfile } from "firebase/auth";
 import ClipLoader from "react-spinners/ClipLoader";
+import useTitle from "Hooks/useTitle";
 
 function App() {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userObj, setUserObj] = useState(null);
+  const setTitle = useTitle("Login");
   useEffect(() => {
     onAuthStateChanged(authService, (user) => {
       if (user) {
